@@ -11,5 +11,42 @@ body {
 form {
     width: 874px;
     height: 782px;
+    border-radius: 50px;
+    background: #FFF;
+    padding: 55px;
 }
+
+.division-grid {
+    width: 675px;
+    height: 44px;
+    border-radius: 10px;
+    border: 2px solid #000;
+    background: #FFF;
+    display: grid;
+    grid-template-columns: 50px 625px;
+}
+
+.division-icon {
+    grid-column: 1/2;
+}
+
+input {
+    width: 600px;
+    grid-column: 2/3;
+    border: none;
+}
+
+i {
+    font-size: 30px;
+    position: relative;
+    top: 6px;
+    left: 5px;
+}
+
+input:focus {
+    border: none;
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
 
