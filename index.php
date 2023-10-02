@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="icons/support-icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style/style.css">
     <title>Sistema de Chamado</title>
 </head>
 <body>
@@ -11,7 +12,7 @@
         <form action="controler.php" method="POST">
             <table>
             <tr><td><label>Email institucional:</label></td></tr>
-            <tr><td><input type="email"></td> <!--Lembrar de colocar o nome para o uso do PHP--> </tr>
+            <tr><td><div><img src="icons/Email-Icon.svg"><input type="email"></td></div> <!--Lembrar de colocar o nome para o uso do PHP--> </tr>
             <tr><td><label>Local do problema:</label></td></tr>
             <tr><td><select>  <!-- Lembrar de colocar o nome para o uso do PHP -->
             <option value="">Pátio</option>
