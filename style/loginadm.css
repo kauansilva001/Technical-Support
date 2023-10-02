@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(270deg, #77C3FD -1.98%, rgba(109, 124, 253, 0.79) 49.57%, rgba(179, 170, 252, 0.53) 99.45%);
+    text-align: center;
+    font-size: xx-large ;
+}
+
+form {
+    width: 600px;
+    height: 500px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    background-color: #f7f7f7;
+    border-radius: 40px;
+    padding: 50px;
+    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.1);
+    gap: 10px;
+    text-align: center;
+    margin: auto;
+    margin-top: 3cm;
+}
+
+table{
+    text-align: center;
+} 
+
+button{
+  width: 4cm;
+  margin-right: 3cm;
+  margin-left:4.5cm;
+  align-items: center;
+  font-size: x-large ;
+  border-radius: 6px;
+}
+
+a{
+    text-decoration: none;
+   
+}
+
+
+
