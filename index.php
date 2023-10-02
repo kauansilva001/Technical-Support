@@ -14,30 +14,35 @@
             <table>
             <tr><td><label>Email institucional:</label></td></tr>
             <tr><td><div class="division-grid"><div class="division-icon"><i class='bx bx-envelope'></i></div><input type="email"></td></div> <!--Lembrar de colocar o nome para o uso do PHP--> </tr>
+
             <tr><td><label>Local do problema:</label></td></tr>
-            <tr><td><select>  <!-- Lembrar de colocar o nome para o uso do PHP -->
+            <tr><td><div class="division-grid"><div class="division-icon"><i class='bx bx-map'></i></div><select>  <!-- Lembrar de colocar o nome para o uso do PHP -->
             <option value="">Pátio</option>
             <option value="">Diretoria</option>
-            <option value="">Secretária</option>
+            <option value="">Secretaria</option>
             <option value="">Laboratório de informática 1</option>
             <option value="">Laboratório de informática 2</option>
             <option value="">Laboratório de informática 3</option>
-            </select></td></tr>
+            </select></div></td></tr>
+
             <tr><td><label>Tipo de problema:</label></td></tr>
-            <tr><td><select>  <!-- Lembrar de colocar o nome para o uso do PHP -->
+            <tr><td><div class="division-grid"><div class="division-icon"><i class='bx bx-dizzy'></i></div><select>  <!-- Lembrar de colocar o nome para o uso do PHP -->
                 <option value="">Hardware</option>
                 <option value="">Software</option>
                 <option value="">Drivers</option>
                 <option value="">Outros Eletrônicos</option>
-            </select></td></tr>
+            </select></div></td></tr>
+
             <tr><td><label>Descreva seu problema:</label></td></tr>
-            <tr><td><textarea></textarea></td></tr>
+            <tr><td><div class="division-grid"><div class="division-icon"><i class='bx bx-edit-alt'></i></div><input type="text"></div></td></tr>
+
             <tr><td><label>Eu sou:</label></td></tr>
-            <tr><td><select name="" id="">
+            <tr><td><div class="division-grid"><div class="division-icon"><i class='bx bx-id-card'></i></div><select>
                 <option value="">Aluno</option>
                 <option value="">Professor</option>
                 <option value="">Funcionário</option>
-            </select></td></tr>
+            </select></div></td></tr>
+            <td><tr><input type="submit"></tr></td>
             </table>
         </form>
     </main>
