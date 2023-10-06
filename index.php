@@ -13,7 +13,10 @@
         <form action="controler.php" method="POST">
             <table>
             <tr><td><label>Email institucional:</label></td></tr>
-            <tr><td><div class="division-grid"><div class="division-icon"><i class='bx bx-envelope'></i></div><input type="email"></td></div> <!--Lembrar de colocar o nome para o uso do PHP--> </tr>
+            <tr><td><div class="division-grid"><div class="division-icon"><i class='bx bx-envelope'></i></div><input class="input-style" type="email"></td></div> <!--Lembrar de colocar o nome para o uso do PHP--> </tr>
+
+            <tr><td><label>Descreva seu problema:</label></td></tr>
+            <tr><td><div class="division-grid"><div class="division-icon"><i class='bx bx-edit-alt'></i></div><input class="input-style" type="text"></div></td></tr>
 
             <tr><td><label>Local do problema:</label></td></tr>
             <tr><td><div class="division-grid"><div class="division-icon"><i class='bx bx-map'></i></div><select>  <!-- Lembrar de colocar o nome para o uso do PHP -->
@@ -33,17 +36,14 @@
                 <option value="">Outros Eletrônicos</option>
             </select></div></td></tr>
 
-            <tr><td><label>Descreva seu problema:</label></td></tr>
-            <tr><td><div class="division-grid"><div class="division-icon"><i class='bx bx-edit-alt'></i></div><input type="text"></div></td></tr>
-
             <tr><td><label>Eu sou:</label></td></tr>
             <tr><td><div class="division-grid"><div class="division-icon"><i class='bx bx-id-card'></i></div><select>
                 <option value="">Aluno</option>
                 <option value="">Professor</option>
                 <option value="">Funcionário</option>
             </select></div></td></tr>
-            <td><tr><input type="submit"></tr></td>
             </table>
+            <td><tr><input class="input-button" type="submit"></tr></td>
         </form>
     </main>
 </body>
