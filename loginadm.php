@@ -36,14 +36,15 @@
     <main>
         <form action="controler.php" method="POST">
             <table>
-            <tr><td><label>Email institucional:</label></td></tr>
-            <tr><td><div class="division-grid"><div class="division-icon"><i class='bx bx-envelope'></i></div><input class="input-style" type="email"></td></div> <!--Lembrar de colocar o nome para o uso do PHP--> </tr>
+            <tr><td><label>Usuário:</label></td></tr>
+            <tr><td><div class="division-grid"><div class="division-icon"><i class='bx bx-user'></i></div><input class="input-style" type="email"></td></div> <!--Lembrar de colocar o nome para o uso do PHP--> </tr>
 
             <tr><td><label>Senha:</label></td></tr>
-            <tr><td><div class="division-grid"><div class="division-icon"><i class='bx bx-lock-alt'></i></div><input class="input-style" type="text"></div></td></tr>
+            <tr><td><div class="division-grid"><div class="division-icon"><i class='bx bx-lock-alt'></i></div><input class="input-style" type="password"></div></td></tr>
 
             </table>
-            <td><tr><input class="input-button" type="su  mit"></tr></td>        </form>
+            <td><tr><input class="input-button" type="submit"></tr></td>        
+        </form>
     </main>
 </body>
 </html>

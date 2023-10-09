@@ -11,6 +11,7 @@
 <body>
     <main>
         <form action="controler.php" method="POST">
+            <h1 style="margin-bottom:5;">TEM UM PROBLEMA?</h1>
             <table>
             <tr><td><label>Email institucional:</label></td></tr>
             <tr><td><div class="division-grid"><div class="division-icon"><i class='bx bx-envelope'></i></div><input class="input-style" type="email"></td></div> <!--Lembrar de colocar o nome para o uso do PHP--> </tr>
