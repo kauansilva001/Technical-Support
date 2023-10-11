@@ -8,8 +8,10 @@
     <link rel="stylesheet" href="style/style.css">
     <style>
         .index-title {
-            margin-bottom: 10px;
+            margin: 15px 0;
             font-size: 35px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 900;
         }
     </style>
     <title>Sistema de Chamado</title>
@@ -52,10 +54,10 @@
             </select></div>
 
             <input class="input-button" type="submit">
-            <div class="space-image">
-                <img src="" alt="">
-            </div>
         </form>
+        <div class="space-image">
+                <img src="icons/IMAGE-INDEX.svg" alt="Ilustração na qual a personagem usa um computador" width="90%">
+        </div>
     </div>
 </main>
 </body>

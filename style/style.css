@@ -13,25 +13,34 @@ header {
 
 body {
     background: #9E5AFF;
+    margin-bottom: 20px;
 }
 
 main {
     display: flex;
     justify-content: center;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .container {
     width: 95%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-}
-
-form {
-    width: 100%;
     border-radius: 15px;
     background: #FFF;
     padding: 40px 50px 20px;
+}
+
+form {
+    grid-column: 1/2;
+    width: 100%;
+}
+
+.space-image {
+    display: flex;
+    justify-content: center;
+    grid-column: 2/3;
+    padding-left: 15px;
 }
 
 label {
@@ -46,6 +55,7 @@ label, option, select {
 }
 
 .division-grid {
+    margin-top: 3px;
     margin-bottom: 7px;
     width: 570px;
     height: 44px;
@@ -98,7 +108,7 @@ select:focus {
     font-family: 'Inter', sans-serif;
     font-size: 12px;
     color: #FFF;
-    margin: 20px 0 0 2px;
+    margin: 10px 0 0 2px;
     padding: 10px 60px ;
     border-radius: 18px;
     background-color: #111;
