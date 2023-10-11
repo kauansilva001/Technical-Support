@@ -10,18 +10,9 @@ header {
     margin-top: 10px;
 }
 
-.go-out{
-    position: relative;
-    left: 80%;
-    display: flex;
-    align-items: center;
-    background-color: #111;
-    width: 200px;
-    height: 40px;
-}
 
 body {
-    background: #3E52D5;
+    background: #9E5AFF;
 }
 
 main {
@@ -30,13 +21,22 @@ main {
     margin-top: 40px;
 }
 
-form {
-    width: 800px;
-    border-radius: 15px;
-    background: #FFF;
-    padding: 55px;
+.container {
+    width: 95%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
+form {
+    width: 100%;
+    border-radius: 15px;
+    background: #FFF;
+    padding: 40px 50px 20px;
+}
+
+label {
+    margin-top: 15px;
+}
 
 label, option, select {
     font-size: 12px;
@@ -46,13 +46,13 @@ label, option, select {
 }
 
 .division-grid {
-    width: 675px;
+    margin-bottom: 7px;
+    width: 570px;
     height: 44px;
     border-radius: 10px;
     border: 2px solid #111;
     background: #FFF;
     display: grid;
-    grid-template-columns: 50px 625px;
 }
 
 .division-icon {
@@ -60,7 +60,7 @@ label, option, select {
 }
 
 .input-style {
-    width: 600px;
+    width: 510px;
     grid-column: 2/3;
     border: none;
 }
@@ -82,7 +82,7 @@ i {
 
 select, option {
     color: #111;
-    width: 610px;
+    width: 510px;
     grid-column: 2/3;
     border: none; 
 }
@@ -94,9 +94,9 @@ select:focus {
 }
 
 .input-button {
+    width: 200px;
     font-family: 'Inter', sans-serif;
     font-size: 12px;
-    font-weight: 500;
     color: #FFF;
     margin: 20px 0 0 2px;
     padding: 10px 60px ;
@@ -106,4 +106,14 @@ select:focus {
     cursor: pointer;
 }
 
+/*Outras estilizações de páginas*/
 
+.go-out{
+    position: relative;
+    left: 80%;
+    display: flex;
+    align-items: center;
+    background-color: #111;
+    width: 200px;
+    height: 40px;
+}

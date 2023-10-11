@@ -6,46 +6,57 @@
     <link rel="shortcut icon" href="icons/support-icon.ico" type="image/x-icon">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style/style.css">
+    <style>
+        .index-title {
+            margin-bottom: 10px;
+            font-size: 35px;
+        }
+    </style>
     <title>Sistema de Chamado</title>
 </head>
 <body>
-    <main>
-        <form action="controler.php" method="POST">
-            <h1 style="margin-bottom:5;">TEM UM PROBLEMA?</h1>
-            <table>
-            <tr><td><label>Email institucional:</label></td></tr>
-            <tr><td><div class="division-grid"><div class="division-icon"><i class='bx bx-envelope'></i></div><input class="input-style" type="email"></td></div> <!--Lembrar de colocar o nome para o uso do PHP--> </tr>
+<main>
+    <div class="container">
+        <form action="conoler.php" method="POST">
 
-            <tr><td><label>Descreva seu problema:</label></td></tr>
-            <tr><td><div class="division-grid"><div class="division-icon"><i class='bx bx-edit-alt'></i></div><input class="input-style" type="text"></div></td></tr>
+            <h1 class="index-title">TEM UM PROBLEMA?</h1>
+            <label>Email institucional:</label>
+            <div class="division-grid"><div class="division-icon"><i class='bx bx-envelope'></i></div><input class="input-style" type="email"></></div> <!--Lembrar de colocar o nome para o uso do PHP-->
 
-            <tr><td><label>Local do problema:</label></td></tr>
-            <tr><td><div class="division-grid"><div class="division-icon"><i class='bx bx-map'></i></div><select>  <!-- Lembrar de colocar o nome para o uso do PHP -->
+            <label>Descreva seu problema:</label>
+            <div class="division-grid"><div class="division-icon"><i class='bx bx-edit-alt'></i></div><input class="input-style" type="text"></div>
+
+            <label>Local do problema:</label>
+            <div class="division-grid"><div class="division-icon"><i class='bx bx-map'></i></div><select>  <!-- Lembrar de colocar o nome para o uso do PHP -->
             <option value="">Pátio</option>
             <option value="">Diretoria</option>
             <option value="">Secretaria</option>
             <option value="">Laboratório de informática 1</option>
             <option value="">Laboratório de informática 2</option>
             <option value="">Laboratório de informática 3</option>
-            </select></div></td></tr>
+            </select></div>
 
-            <tr><td><label>Tipo de problema:</label></td></tr>
-            <tr><td><div class="division-grid"><div class="division-icon"><i class='bx bx-dizzy'></i></div><select>  <!-- Lembrar de colocar o nome para o uso do PHP -->
+            <label>Tipo de problema:</label>
+            <div class="division-grid"><div class="division-icon"><i class='bx bx-dizzy'></i></div><select>  <!-- Lembrar de colocar o nome para o uso do PHP -->
                 <option value="">Hardware</option>
                 <option value="">Software</option>
                 <option value="">Drivers</option>
-                <option value="">Outros Eletrônicos</option>
-            </select></div></td></tr>
+                <option value="">Ouos Eleônicos</option>
+            </select></div>
 
-            <tr><td><label>Eu sou:</label></td></tr>
-            <tr><td><div class="division-grid"><div class="division-icon"><i class='bx bx-id-card'></i></div><select>
+            <label>Eu sou:</label>
+            <div class="division-grid"><div class="division-icon"><i class='bx bx-id-card'></i></div><select>
                 <option value="">Aluno</option>
                 <option value="">Professor</option>
                 <option value="">Funcionário</option>
-            </select></div></td></tr>
-            </table>
-            <td><tr><input class="input-button" type="submit"></tr></td>
+            </select></div>
+
+            <input class="input-button" type="submit">
+            <div class="space-image">
+                <img src="" alt="">
+            </div>
         </form>
-    </main>
+    </div>
+</main>
 </body>
 </html>
