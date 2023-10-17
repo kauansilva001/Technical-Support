@@ -36,6 +36,7 @@
             <option value="">Laboratório de informática 1</option>
             <option value="">Laboratório de informática 2</option>
             <option value="">Laboratório de informática 3</option>
+            <option value="">Outro (Especifique o local na parte de descrição)</option>
             </select></div>
 
             <label>Tipo de problema:</label>

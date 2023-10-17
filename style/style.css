@@ -107,13 +107,19 @@ select:focus {
     width: 200px;
     font-family: 'Inter', sans-serif;
     font-size: 12px;
-    color: #FFF;
+    color: #ebeaea;
     margin: 10px 0 0 2px;
     padding: 10px 60px ;
     border-radius: 18px;
     background-color: #111;
     border: none;
     cursor: pointer;
+}
+
+@media screen and (max-width:1400px) {
+    body {
+        background-color: #111;
+    }
 }
 
 /*Outras estilizações de páginas*/
