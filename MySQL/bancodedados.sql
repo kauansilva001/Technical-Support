@@ -1,15 +1,3 @@
-use escola_tecnica;
-
-create table Turma(
-id char auto_increment primary key,
-cod_disc varchar(100) not null,
-cod_turma varchar(100) not null,
-cod_prof varchar(100) not null,
-ano int(100) not null,
-horario decimal(100) not null,
-foreign key(cod_disc) references Disciplinas(cod_disc),
-foreign key(cod_prof) references Professores(cod_prof) 
-);
 
 create database sistema_de_chamados;
 
