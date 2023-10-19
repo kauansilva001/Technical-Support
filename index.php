@@ -6,14 +6,6 @@
     <link rel="shortcut icon" href="icons/support-icon.ico" type="image/x-icon">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style/style.css">
-    <style>
-        .index-title {
-            margin: 15px 0;
-            font-size: 35px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 900;
-        }
-    </style>
     <title>Sistema de Chamado</title>
 </head>
 <body>
@@ -53,8 +45,9 @@
                 <option value="">Professor</option>
                 <option value="">Funcionário</option>
             </select></div>
-
+            <div class="center-phone">
             <input class="input-button" type="submit">
+            </div>
         </form>
         <div class="space-image">
                 <img src="icons/IMAGE-INDEX.svg" alt="Ilustração na qual a personagem usa um computador" width="90%">
