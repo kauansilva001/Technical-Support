@@ -137,6 +137,7 @@ select:focus {
   }
   
   .social-message .message {
+    text-rendering: geometricPrecision;
     padding-left: 0.75rem;
     padding-right: 0.75rem;
     font-size: 14px;

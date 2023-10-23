@@ -7,7 +7,10 @@ class chamados{
     $lugar,
     $tipo_problema ,
     $tipo_user ,
-    $data_hora;
+    $data_hora,
+    $user_name,
+    $senha;
+
 
     public function getCod_chamados(){
         return $this->cod_chamados;
@@ -69,6 +72,22 @@ class chamados{
 
     public function setData_hora($data_hora){
         $this->data_hora = $data_hora;
+    }
+
+    public function getUser_name($user_name){
+        return $this->user_name;
+    }
+
+    public function setUser_name($user_name){
+        $this->user_name = $user_name;
+    }
+
+    public function getSenha($senha){
+        return $this->senha;
+    }
+
+    public function setSenha($senha){
+        $this->senha = $senha;
     }
 
 }
