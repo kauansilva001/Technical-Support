@@ -50,7 +50,7 @@
             </div>
         </form>
         <div class="space-image">
-                <img src="icons/IMAGE-INDEX.svg" alt="Ilustração na qual a personagem usa um computador" width="90%">
+                <img src="icons/IMAGE-INDEX.svg" alt="Ilustração na qual a personagem usa um computador" width="95%">
         </div>
     </div>
 </main>
