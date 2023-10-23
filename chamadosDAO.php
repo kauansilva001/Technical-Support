@@ -1,7 +1,7 @@
 <?php 
 include "conexao.php";
 
-class alunosDao{
+class chamadosDao{
     //CRUD - create, read, update, delete
     //create
     public function cadastrar(chamados $c){
@@ -92,20 +92,17 @@ class alunosDao{
 
   
      public function apagar(chamados $c){
-        $sql0 = "delete from aluno  set nome=?, cpf=?, turma=?";
-        $sql1 = "delete from telefone set telefone=?, email=?, cpf_aluno=?";
-        $sql2 = "delete from endereco set logradouro=?, numero=?, complemento=?, bairro=?, estado=?, cep=?, cpf_aluno=?";
+        $sql0 = "update into chamados  set cod_chamados=?, email=?, desc_problema=?, lugar=?, tipo_problema=?, tipo_user=?, data_hora=?";
+        $sql1 = "update into administrador set cod_admin=?, user_name=?, senha=?, cod_chamados=? ";
         $bd = new Conexao();
         $conn = $bd->getConexao();
         
         $v0 = $conn->prepare($sql0);
-        $v0->bindValue(1, $m->getCPF());
+        $v0->bindValue(1, $m->getCod_chamados());
 
         $vl = $conn->prepare($sql1);
-        $vl->bindValue(1, $m->getCPF());
+        $vl->bindValue(1, $m->getCod_admin());
 
-        $v2 = $conn->prepare($sql2);
-        $v2->bindValue(1, $m->getCPF());
         $result = $vl->execute();
 
         if($result){
