@@ -22,31 +22,31 @@
 
             <label>Local do problema:</label>
             <div class="division-grid" ><div class="division-icon"><i class='bx bx-map'></i></div><select name="lugar">  <!-- Lembrar de colocar o nome para o uso do PHP -->
-            <option value="">Pátio</option>
-            <option value="">Diretoria</option>
-            <option value="">Secretaria</option>
-            <option value="">Laboratório de informática 1</option>
-            <option value="">Laboratório de informática 2</option>
-            <option value="">Laboratório de informática 3</option>
-            <option value="">Outro (Especifique o local na parte de descrição)</option>
+            <option value="patio">Pátio</option>
+            <option value="diretoria">Diretoria</option>
+            <option value="secretaria">Secretaria</option>
+            <option value="lab_informatica_1">Laboratório de informática 1</option>
+            <option value="lab_informatica_2">Laboratório de informática 2</option>
+            <option value="lab_informatica_3">Laboratório de informática 3</option>
+            <option value="outro">Outro (Especifique o local na parte de descrição)</option>
             </select></div>
 
             <label>Tipo de problema:</label>
             <div class="division-grid" ><div class="division-icon"><i class='bx bx-dizzy'></i></div><select name="tipo_problema">  <!-- Lembrar de colocar o nome para o uso do PHP -->
-                <option value="">Hardware</option>
-                <option value="">Software</option>
-                <option value="">Drivers</option>
-                <option value="">Ouos Eleônicos</option>
+                <option value="hardware">Hardware</option>
+                <option value="software">Software</option>
+                <option value="drivers">Drivers</option>
+                <option value="outros_eletronicos">Outros Eleônicos</option>
             </select></div>
 
             <label>Eu sou:</label>
             <div class="division-grid"><div class="division-icon"><i class='bx bx-id-card'></i></div><select  name="tipo_user">
-                <option value="">Aluno</option>
-                <option value="">Professor</option>
-                <option value="">Funcionário</option>
+                <option value="aluno">Aluno</option>
+                <option value="professor">Professor</option>
+                <option value="funcionario">Funcionário</option>
             </select></div>
             <div class="center-phone">
-            <input class="input-button" name="botao" type="submit">
+            <input class="input-button" value="CADASTRAR" name="botao" type="submit">
             </div>
         </form>
         <div class="space-image">

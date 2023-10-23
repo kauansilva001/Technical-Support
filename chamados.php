@@ -1,21 +1,14 @@
 <?php
 
 class chamados{
-    private $cod_chamados,
+    private
     $email,
     $desc_problema,
     $lugar,
     $tipo_problema ,
-    $tipo_user ,
-    $data_hora;
+    $tipo_user;
 
-    public function getCod_chamados(){
-        return $this->cod_chamados;
-    }
-
-    public function setCod_chamados($cod_chamados){
-        $this->cod_chamados = $cod_chamados;
-    }
+   
 
 
     public function getEmail(){
@@ -62,13 +55,5 @@ class chamados{
         $this->tipo_user = $tipo_user;
     }
 
-
-    public function getData_hora(){
-        return $this->data_hora;
-    }
-
-    public function setData_hora($data_hora){
-        $this->data_hora = $data_hora;
-    }
 
 }
