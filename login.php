@@ -17,8 +17,19 @@
 
             <label>Senha:</label>
             <div class="division-grid"><div class="division-icon"><i class='bx bx-lock-alt'></i></div><input class="input-style" type="password"></div>
-
+            <a href="controler.php"><p class="text-password">Esqueceu a senha?</p></a>
+            <div class="division-button">
             <input class="input-button" type="submit"> 
+            </div>
+            <div class="social-message">
+		    <div class="line"></div>
+		    <p class="message">CONEXÕES COM O PROJETO</p>
+		    <div class="line"></div>
+	        </div>
+            <div class="icons-space">
+               <i class='bx bx-envelope' style="font-size:50px; cursor:pointer;"></i>
+               <i class='bx bxl-github' style="font-size:50px; cursor:pointer;"></i>
+            </div>
         </form>
     </main>
 </body>

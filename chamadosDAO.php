@@ -1,37 +1,28 @@
 <?php 
 include "conexao.php";
 
-class alunosDao{
+class chamadosDao{
     //CRUD - create, read, update, delete
     //create
     public function cadastrar(chamados $c){
-        $sql0 = "insert into chamados (cod_chamados, email, desc_problema, lugar, tipo_problema, tipo_user, data_hora ) values (?, ?, ?,?,?,?,?)";
-        $sql1 = "insert into administrador (cod_admin, user_name, senha, cod_chamados) values (?, ?, ?, ?)";
+        $sql0 = "insert into chamados (email, desc_problema, lugar, tipo_problema, tipo_user) values (?,?,?,?,?)";
 
         $bd = new Conexao();
         $conn = $bd->getConexao();
 
         $v0 = $conn->prepare($sql0);
-        $v0->bindValue(2, $c->getEmail());
-        $v0->bindValue(3, $c->getDesc_problema());
-        $v0->bindValue(4, $c->getLugar());
-        $v0->bindValue(5, $c->getTipo_problema());
-        $v0->bindValue(6, $c->getTipo_user());
-        $v0->bindValue(7, $c->getData_hora());
-
-        $v1 = $conn->prepare($sql1);
-        $v1->bindValue(1, $c->getCod_admin());
-        $v1->bindValue(2, $c->getUser_name());
-        $v1->bindValue(3, $c->getSenha());
-        $v1->bindValue(4, $c->getCod_chamados());
+        $v0->bindValue(1, $c->getEmail());
+        $v0->bindValue(2, $c->getDesc_problema());
+        $v0->bindValue(3, $c->getLugar());
+        $v0->bindValue(4, $c->getTipo_problema());
+        $v0->bindValue(5, $c->getTipo_user());
         
 
 
         $result0 = $v0->execute();
-        $result1 = $v1->execute();
        
 
-        if($result0 && $result1){
+        if($result0){
             echo "cadastrado com sucesso";
         }else{
             echo "erro ao cadastrar";
@@ -46,7 +37,7 @@ class alunosDao{
         $conn = $bd->getConexao();
            
         $vl = $conn->prepare($sql);
-        $vl->bindValue(2, $m->getCod_chamados());
+        $vl->bindValue(1, $c->getEmail());
         $vl->execute();
    
        if($vl->rowCount()>0){
@@ -58,31 +49,26 @@ class alunosDao{
 
     
      public function atualizar(chamados $c){
-        $sql0 = "update into chamados  set cod_chamados=?, email=?, desc_problema=?, lugar=?, tipo_problema=?, tipo_user=?, data_hora=?";
-        $sql1 = "update into administrador set cod_admin=?, user_name=?, senha=?, cod_chamados=? ";
+        $sql0 = "update into chamados  set email=?, desc_problema=?, lugar=?, tipo_problema=?, tipo_user=?";
       
         $bd = new Conexao();
         $conn = $bd->getConexao();
        
         $v0 = $conn->prepare($sql0);
-        $v0->bindValue(2, $c->getEmail());
-        $v0->bindValue(3, $c->getDesc_problema());
-        $v0->bindValue(4, $c->getLugar());
-        $v0->bindValue(5, $c->getTipo_problema());
-        $v0->bindValue(6, $c->getTipo_user());
-        $v0->bindValue(7, $c->getData_hora());
+        $v0->bindValue(1, $c->getEmail());
+        $v0->bindValue(2, $c->getDesc_problema());
+        $v0->bindValue(3, $c->getLugar());
+        $v0->bindValue(4, $c->getTipo_problema());
+        $v0->bindValue(5, $c->getTipo_user());
+        
 
-        $v1 = $conn->prepare($sql1);
-        $v1->bindValue(1, $c->getCod_admin());
-        $v1->bindValue(2, $c->getUser_name());
-        $v1->bindValue(3, $c->getSenha());
-        $v1->bindValue(4, $c->getCod_chamados());
+       
         
       
         $result0 = $v0->execute();
-        $result1 = $v1->execute(); /*PARAMOS AQUI*/
+       /*PARAMOS AQUI*/
        
-        if($result0 && $result1){
+        if($result0){
             echo "atualizado com sucesso";
         }else{
             echo "erro ao atualizar";
@@ -92,20 +78,16 @@ class alunosDao{
 
   
      public function apagar(chamados $c){
-        $sql0 = "delete from aluno  set nome=?, cpf=?, turma=?";
-        $sql1 = "delete from telefone set telefone=?, email=?, cpf_aluno=?";
-        $sql2 = "delete from endereco set logradouro=?, numero=?, complemento=?, bairro=?, estado=?, cep=?, cpf_aluno=?";
+        $sql0 = "update into chamados  set  email=?, desc_problema=?, lugar=?, tipo_problema=?, tipo_user=?";
+
         $bd = new Conexao();
         $conn = $bd->getConexao();
         
         $v0 = $conn->prepare($sql0);
-        $v0->bindValue(1, $m->getCPF());
+        $v0->bindValue(1, $m->getCod_chamados());
 
-        $vl = $conn->prepare($sql1);
-        $vl->bindValue(1, $m->getCPF());
+       
 
-        $v2 = $conn->prepare($sql2);
-        $v2->bindValue(1, $m->getCPF());
         $result = $vl->execute();
 
         if($result){
