@@ -1,16 +1,16 @@
 <?php 
 
-$userAdmin = filter_input(INPUT_POST,"user-admin");
+$user_name = filter_input(INPUT_POST,"user-admin");
 $senha = filter_input(INPUT_POST,"password-admin");
 
-var_dump($userAdmin);
+var_dump($user_name);
 var_dump($senha);
 
 include "conexao.php";
 
 session_start();
 
-$sql = "select * from alunos where user_name=? and senha=?";
+$sql = "select * from administrador where user_name=? and senha=?";
 $bd = new Conexao();
 $conn = $bd->getConexao();
 
@@ -21,10 +21,12 @@ $v->bindValue(2, $senha);
 $v->execute();
     if ($v-> rowCount()>0){
         $_SESSION['$user_name'] = $user_name;
-        /*header("location:consulta.php");*/ 
+        echo "cadastro realizado";
     }else{
         unset ($_SESSION['$user_name']);
         /*header("location:index.php");*/
 }
 
+
+/* A programação está certa, porém é necessário uma revisão no banco de dados*/
 ?>
