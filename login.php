@@ -29,7 +29,7 @@
 		    <div class="line"></div>
 	        </div>
             <div class="icons-space">
-               <i class='bx bx-envelope' style="font-size:50px; cursor:pointer;"></i>
+               <a href="mailto:"><i class='bx bx-envelope' style="font-size:50px; cursor:pointer;"></i></a>
                <i class='bx bxl-github' style="font-size:50px; cursor:pointer;"></i>
             </div>
         </form>
