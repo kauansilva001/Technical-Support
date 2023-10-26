@@ -1,3 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+ @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+    body{
+    background: #9E5AFF;
+    display: flex;
+    justify-content: center;
+    height: 100dvh;
+    align-items: center;
+    }
+
+    main {
+    display: flex;
+    justify-content: center;
+}
+
+    .container {
+    width: 95%;
+    display: grid;
+    column-gap: 70px;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 15px;
+    background: #FFF;
+    padding: 40px 50px;
+    grid-column: 1/2;
+    width: 100%;
+}
+
+    p{   
+         font-family: 'Inter', sans-serif;
+         font-weight: 900;
+        font-size: xx-large;
+        text-align: center;
+    }
+
+    .input-button {
+    margin-top: 15px;
+    padding: 8px 50px;
+    font-family: 'Inter', sans-serif;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-size: 10px;
+  }
+  
+  .input-button:hover {
+    transform: translateY(-3px);
+    background-color: rgb(128, 95, 247);
+  }
+    </style>
+</body>
+</html>
+
+
 <?php 
 include "conexao.php";
 
@@ -23,7 +94,18 @@ class chamadosDao{
        
 
         if($result0){
-            echo "cadastrado com sucesso";
+            echo "
+            <main>
+            <div class='container'>
+            <div>
+            <p>Cadastrado com sucesso!</p>
+            </div>
+            
+            <div class='space-image'>
+            <img src='icons/IMAGE-INDEX.svg' alt='Ilustração na qual a personagem usa um computador' width='95%'>
+            </div>
+            <main>
+            </div>";
         }else{
             echo "erro ao cadastrar";
         }
