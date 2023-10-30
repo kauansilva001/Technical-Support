@@ -8,17 +8,6 @@
  $data_hora= filter_input(INPUT_POST, "data_hora", FILTER_SANITIZE_STRING);
  $botao = filter_input(INPUT_POST, "botao");
 
- 
- var_dump($email);
- var_dump($desc_problema);
- var_dump($lugar);
- var_dump( $tipo_problema);
- var_dump($tipo_user);
- var_dump( $data_hora);
-
-
-
-
 include "chamadosDAO.php";
 include "chamados.php";
 
