@@ -28,5 +28,4 @@ $v->execute();
 }
 
 
-/* A programação está certa, porém é necessário uma revisão no banco de dados*/
 ?>

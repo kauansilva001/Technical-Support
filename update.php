@@ -19,7 +19,7 @@
             <label>Senha:</label>
             <div class="division-grid"><div class="division-icon"><i class='bx bx-lock-alt'></i></div><input class="input-style" type="password" name="password-admin" placeholder="Digite uma nova senha    (:"></div>
             <div class="division-button">
-            <input class="input-button" type="submit" value="ATUALIZAR SENHA"> 
+            <input class="input-button" type="submit" value="ATUALIZAR SENHA" name=botao> 
             </div>
         </form>
     

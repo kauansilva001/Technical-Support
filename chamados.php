@@ -74,7 +74,7 @@ class chamados{
         $this->data_hora = $data_hora;
     }
 
-    public function getUser_name($user_name){
+    public function getUser_name(){
         return $this->user_name;
     }
 
@@ -82,7 +82,7 @@ class chamados{
         $this->user_name = $user_name;
     }
 
-    public function getSenha($senha){
+    public function getSenha(){
         return $this->senha;
     }
 

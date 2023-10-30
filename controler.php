@@ -6,7 +6,10 @@
  $tipo_problema = filter_input(INPUT_POST, "tipo_problema", FILTER_SANITIZE_STRING);
  $tipo_user = filter_input(INPUT_POST, "tipo_user", FILTER_SANITIZE_STRING);
  $data_hora= filter_input(INPUT_POST, "data_hora", FILTER_SANITIZE_STRING);
+ $user_name = filter_input(INPUT_POST,"user-admin");
+ $senha = filter_input(INPUT_POST,"password-admin");
  $botao = filter_input(INPUT_POST, "botao");
+
 
 include "chamadosDAO.php";
 include "chamados.php";
@@ -19,6 +22,8 @@ $chamados->setLugar($lugar);
 $chamados->setTipo_problema($tipo_problema);
 $chamados->setTipo_user($tipo_user);
 $chamados->setData_hora($data_hora);
+$chamados->setUser_name($user_name);
+$chamados->setSenha($senha);
 
 
 $chamadosDao = new chamadosDao();
@@ -30,6 +35,8 @@ if($botao=="CADASTRAR"){
     $chamadosDao->atualizar($chamados);
 }else if($botao=="APAGAR"){
     $chamadosDao->apagar($chamados);
+}else if($botao == "Enviar"){
+    $chamadosDao->verificar($chamados);
 }else if($botao=="BUSCAR"){
     $chamadosDao->consultar();
     foreach($chamadosDao->consultar() as $consult){

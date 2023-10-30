@@ -91,7 +91,7 @@ class chamadosDao{
 
 
   
-     public function apagar(chamados $c){
+     /*public function apagar(chamados $c){
         $sql0 = "update into chamados  set cod_chamados=?, email=?, desc_problema=?, lugar=?, tipo_problema=?, tipo_user=?, data_hora=?";
         $sql1 = "update into administrador set cod_admin=?, user_name=?, senha=?, cod_chamados=? ";
         $bd = new Conexao();
@@ -110,10 +110,28 @@ class chamadosDao{
         }else{
             echo "erro ao apagar";
         }
+    }*/
+
+    public function verificar(chamados $c) {
+        session_start();
+
+        $sql1 = "select * from administrador where user_name=? and senha=?";
+        $bd = new Conexao();
+        $conn = $bd->getConexao();
+
+        $v = $conn->prepare($sql1);
+        $v->bindValue(1, $c->getUser_name());
+        $v->bindValue(2, $c->getSenha());
+
+        $v->execute();
+    if ($v-> rowCount()>0){
+        $_SESSION['getUser_name'] = $c->getUser_name();
+        echo "Usuário válido";
+    }else{
+        unset ($_SESSION['$getUser_name']);
+        echo "Usuário inválido";
+        /*header("location:index.php");*/
     }
-
-
-
-
+ }
 }
 
