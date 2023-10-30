@@ -43,7 +43,7 @@
     p{    margin-bottom: 30px;
          font-family: 'Inter', sans-serif;
          font-weight: 900;
-        font-size: 60px;
+        font-size: 55px;
         text-align: center;
         
     }
@@ -90,13 +90,13 @@ justify-content:center;
     .container {
         display: block;
         width: 90%;
-        height:16cm;
+        height:14.5cm;
        
         
     }
 
     p {
-        font-size: 44px;
+        font-size: 34px;
         text-align: center;
     }
 
@@ -149,7 +149,7 @@ class chamadosDao{
             <main>
             <div class='container'>
             <div>
-            <p>Cadastrado com sucesso!</p>
+            <p>CADASTRADO COM SUCESSO!</p>
             <div class='botao'>
            <a href='index.php'><input class='input-button' value='ENVIAR OUTRO CHAMADO' name='botao' type='submit'</a></div>
             </div>
