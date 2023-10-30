@@ -58,34 +58,20 @@ class chamadosDao{
 
     
      public function atualizar(chamados $c){
-        $sql0 = "update into chamados  set cod_chamados=?, email=?, desc_problema=?, lugar=?, tipo_problema=?, tipo_user=?, data_hora=?";
-        $sql1 = "update into administrador set cod_admin=?, user_name=?, senha=?, cod_chamados=? ";
+        $sql1 = "update administrador set user_name=?, senha=?";
       
         $bd = new Conexao();
         $conn = $bd->getConexao();
-       
-        $v0 = $conn->prepare($sql0);
-        $v0->bindValue(2, $c->getEmail());
-        $v0->bindValue(3, $c->getDesc_problema());
-        $v0->bindValue(4, $c->getLugar());
-        $v0->bindValue(5, $c->getTipo_problema());
-        $v0->bindValue(6, $c->getTipo_user());
-        $v0->bindValue(7, $c->getData_hora());
 
         $v1 = $conn->prepare($sql1);
-        $v1->bindValue(1, $c->getCod_admin());
-        $v1->bindValue(2, $c->getUser_name());
-        $v1->bindValue(3, $c->getSenha());
-        $v1->bindValue(4, $c->getCod_chamados());
-        
-      
-        $result0 = $v0->execute();
-        $result1 = $v1->execute(); /*PARAMOS AQUI*/
+        $v1->bindValue(1, $c->getUser_name());
+        $v1->bindValue(2, $c->getSenha());
+        $result1 = $v1->execute();
        
-        if($result0 && $result1){
-            echo "atualizado com sucesso";
+        if($result1){
+            echo "Senha atualizada";
         }else{
-            echo "erro ao atualizar";
+            echo "Erro ao atualizar";
         }
     }
 

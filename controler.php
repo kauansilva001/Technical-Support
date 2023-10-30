@@ -10,7 +10,6 @@
  $senha = filter_input(INPUT_POST,"password-admin");
  $botao = filter_input(INPUT_POST, "botao");
 
-
 include "chamadosDAO.php";
 include "chamados.php";
 
@@ -31,7 +30,7 @@ $chamadosDao = new chamadosDao();
 
 if($botao=="CADASTRAR"){
     $chamadosDao->cadastrar($chamados);
-}else if($botao=="ATUALIZAR"){
+}else if($botao=="ATUALIZAR SENHA"){
     $chamadosDao->atualizar($chamados);
 }else if($botao=="APAGAR"){
     $chamadosDao->apagar($chamados);
