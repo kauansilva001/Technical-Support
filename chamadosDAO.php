@@ -29,7 +29,6 @@
 }
 
     .container {
-    width: 95%;
     display: grid;
     column-gap: 70px;
     grid-template-columns: 1fr 1fr;
@@ -37,19 +36,21 @@
     background: #FFF;
     padding: 40px 50px;
     grid-column: 1/2;
-    width: 100%;
+    width: 70%;
+    align-items:center;
 }
 
-    p{   
+    p{    margin-bottom: 30px;
          font-family: 'Inter', sans-serif;
          font-weight: 900;
-        font-size: xx-large;
+        font-size: 60px;
         text-align: center;
+        
     }
 
     .input-button {
     margin-top: 15px;
-    padding: 8px 50px;
+    /*padding: 8px 50px;*/
     font-family: 'Inter', sans-serif;
     background-color: #333;
     color: #fff;
@@ -57,13 +58,63 @@
     border-radius: 25px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-    font-size: 10px;
+    font-size: large;
+    width: 300px;
+    height: 50px;
   }
   
   .input-button:hover {
     transform: translateY(-3px);
     background-color: rgb(128, 95, 247);
   }
+
+  .botao{
+display:flex;
+justify-content:center;
+
+  }
+
+
+  @media screen and (max-width:768px) {
+    
+
+
+
+    .botao {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+       
+    }
+
+    .container {
+        display: block;
+        width: 90%;
+        height:16cm;
+       
+        
+    }
+
+    p {
+        font-size: 44px;
+        text-align: center;
+    }
+
+    .input-button {
+    
+    width: 200px;
+    height: 50px;
+    font-size:small;
+
+    }
+
+    
+
+    }
+
+
+
+
     </style>
 </body>
 </html>
@@ -99,8 +150,9 @@ class chamadosDao{
             <div class='container'>
             <div>
             <p>Cadastrado com sucesso!</p>
+            <div class='botao'>
+           <a href='index.php'><input class='input-button' value='ENVIAR OUTRO CHAMADO' name='botao' type='submit'</a></div>
             </div>
-            
             <div class='space-image'>
             <img src='icons/IMAGE-INDEX.svg' alt='Ilustração na qual a personagem usa um computador' width='95%'>
             </div>
