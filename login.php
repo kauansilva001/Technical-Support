@@ -12,7 +12,7 @@
 <main style="display:flex; justify-content:center;">
 
         <form action="controleADM.php" method="POST">
-            <h1 class="login-title">RECUPERAR SENHA</h1>
+            <h1 class="login-title">LOGIN</h1>
             <label>Usuário:</label>
             <div class="division-grid"><div class="division-icon"><i class='bx bx-user'></i></div><input class="input-style" type="text" name="user-admin"></div> <!--Lembrar de colocar o nome para o uso do PHP--> </tr>
 
@@ -20,7 +20,7 @@
             <div class="division-grid"><div class="division-icon"><i class='bx bx-lock-alt'></i></div><input class="input-style" type="password" name="password-admin"></div>
             <a href="update.php"><p class="text-password">Esqueceu a senha?</p></a>
             <div class="division-button">
-            <input class="input-button" type="submit"> 
+            <input style="width:200px;" class="input-button" type="submit" placeholder="ENTRAR"> 
             </div>
 
             <div class="social-message">
