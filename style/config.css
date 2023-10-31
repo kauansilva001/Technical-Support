@@ -42,6 +42,7 @@ form {
     padding: 20px 30px;
     background: white;
     border-radius: 15px;
+    box-shadow: 0px 2px 2px 0px rgb(0, 0, 0);
 }
 
 label {
@@ -84,20 +85,12 @@ i {
 }
 
 .input-style:focus {
-    color: #111;
     font-size: 12px;
     font-family: 'Inter', sans-serif;
     border: none;
     box-shadow: 0 0 0 0;
     outline: 0;
 }
-
-input::placeholder {
-    font-family: 'Inter', sans-serif;
-    color: #c0c0c0;
-    font-size: 12px;
-}
-
 
 select, option {
     color: #111;
@@ -110,10 +103,10 @@ select:focus {
     border: none;
     box-shadow: 0 0 0 0;
     outline: 0;
-    color: #c0c0c0;
 }
 
 .input-button {
+    width: 200px;
     font-family: 'Inter', sans-serif;
     font-size: 12px;
     color: #ebeaea;
@@ -123,7 +116,6 @@ select:focus {
     background-color: #111;
     border: none;
     cursor: pointer;
-    text-transform: uppercase;
 }
 
 .division-button {
@@ -145,7 +137,6 @@ select:focus {
   }
   
   .social-message .message {
-    text-rendering: geometricPrecision;
     padding-left: 0.75rem;
     padding-right: 0.75rem;
     font-size: 14px;
@@ -160,4 +151,3 @@ select:focus {
     justify-content: space-evenly;
     align-items: center;
   }
-

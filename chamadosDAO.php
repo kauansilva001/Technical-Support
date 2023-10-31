@@ -6,7 +6,7 @@ class chamadosDao{
     //create
     public function cadastrar(chamados $c){
         $sql0 = "insert into chamados (cod_chamados, email, desc_problema, lugar, tipo_problema, tipo_user, data_hora ) values (?, ?, ?,?,?,?,?)";
-        $sql1 = "insert into administrador (cod_admin, user_name, senha, cod_chamados) values (?, ?, ?, ?)";
+        $sql1 = "insert into administrador (user_name, senha) values (?, ?, ?, ?)";
 
         $bd = new Conexao();
         $conn = $bd->getConexao();
@@ -20,10 +20,8 @@ class chamadosDao{
         $v0->bindValue(7, $c->getData_hora());
 
         $v1 = $conn->prepare($sql1);
-        $v1->bindValue(1, $c->getCod_admin());
-        $v1->bindValue(2, $c->getUser_name());
-        $v1->bindValue(3, $c->getSenha());
-        $v1->bindValue(4, $c->getCod_chamados());
+        $v1->bindValue(1, $c->getUser_name());
+        $v1->bindValue(2, $c->getSenha());
         
 
 
@@ -36,25 +34,7 @@ class chamadosDao{
         }else{
             echo "erro ao cadastrar";
         }
-    } //fim cadastrar 
-
-
-    //read
-    public function buscar(chamados $c){
-        $sql = "select * from chamados";
-        $bd = new Conexao();
-        $conn = $bd->getConexao();
-           
-        $vl = $conn->prepare($sql);
-        $vl->bindValue(2, $m->getCod_chamados());
-        $vl->execute();
-   
-       if($vl->rowCount()>0){
-        $resultado->fetchAll(\PDO::FETCH_ASSOC);
-        return $resultado;
-   }
-
-}
+    } //FIM CADASTRAR
 
     
      public function atualizar(chamados $c){
@@ -71,32 +51,9 @@ class chamadosDao{
         if($result1){
             echo "Senha atualizada";
         }else{
-            echo "Erro ao atualizar";
+            echo "Erro ao atualizar senha";
         }
     }
-
-
-  
-     /*public function apagar(chamados $c){
-        $sql0 = "update into chamados  set cod_chamados=?, email=?, desc_problema=?, lugar=?, tipo_problema=?, tipo_user=?, data_hora=?";
-        $sql1 = "update into administrador set cod_admin=?, user_name=?, senha=?, cod_chamados=? ";
-        $bd = new Conexao();
-        $conn = $bd->getConexao();
-        
-        $v0 = $conn->prepare($sql0);
-        $v0->bindValue(1, $m->getCod_chamados());
-
-        $vl = $conn->prepare($sql1);
-        $vl->bindValue(1, $m->getCod_admin());
-
-        $result = $vl->execute();
-
-        if($result){
-            echo "apagado com sucesso";
-        }else{
-            echo "erro ao apagar";
-        }
-    }*/
 
     public function verificar(chamados $c) {
         session_start();
@@ -119,5 +76,20 @@ class chamadosDao{
         /*header("location:index.php");*/
     }
  }
+
+    public function chamadosResolvidos(chamados $c) {
+        $sql = "select * from chamados";
+        $bd = new Conexao();
+        $conn = $bd->getConexao();
+
+        $v1 = $conn->prepare($sql);
+        $v1->bindValue(1, $c->cod_chamados());        
+        $v1->bindValue(2, $c->cod_chamados());
+        $v1->bindValue(3, $c->cod_chamados());
+        $v1->bindValue(4, $c->cod_chamados());
+        $v1->bindValue(5, $c->cod_chamados());
+        $v1->bindValue(6, $c->cod_chamados());
+
+    }
 }
 
