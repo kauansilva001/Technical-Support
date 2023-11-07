@@ -163,6 +163,11 @@ class chamadosDao{
         }
     } //fim cadastrar 
 
+    public function listachamados(){
+        $resultado = $this->pdo->query("Select * from chamados");
+        return $resultado;
+        }
+
 
     //read
     public function buscar(chamados $c){
