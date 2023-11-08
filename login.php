@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="icons/support-icon.ico" type="image/x-icon">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="style/config.css">
+    <link rel="stylesheet" href="STYLE/config.css">
     <title>Sistema de Chamado</title>
 </head>
 
@@ -27,7 +27,7 @@
                 <p class="text-password">Esqueceu a senha?</p>
             </a>
             <div class="division-button">
-                <input class="input-button" type="submit">
+                <input style="text-transform: uppercase;" class="input-button" type="submit">
             </div>
             <div class="social-message">
                 <div class="line"></div>

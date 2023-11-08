@@ -123,7 +123,7 @@ justify-content:center;
 <?php 
 include "conexao.php";
 
-class chamadosDao{
+class chamadosDao {
     //CRUD - create, read, update, delete
     //create
     public function cadastrar(chamados $c){
@@ -154,16 +154,16 @@ class chamadosDao{
            <a href='index.php'><input class='input-button' value='ENVIAR OUTRO CHAMADO' name='botao' type='submit'</a></div>
             </div>
             <div class='space-image'>
-            <img src='icons/IMAGE-INDEX.svg' alt='Ilustração na qual a personagem usa um computador' width='95%'>
+            <img src='IMAGES-ICONS/IMAGE-INDEX.svg' alt='Ilustração na qual a personagem usa um computador' width='95%'>
             </div>
             <main>
             </div>";
         }else{
             echo "erro ao cadastrar";
         }
-    } //fim cadastrar 
+    } 
 
-    public function listachamados(){
+ /*   public function listachamados(){
         $resultado = $this->pdo->query("Select * from chamados");
         return $resultado;
         }
@@ -184,10 +184,10 @@ class chamadosDao{
         return $resultado;
    }
 
-}
+}*/
 
     
-     public function atualizar(chamados $c){
+     /*public function atualizar(chamados $c){
         $sql0 = "update into chamados  set email=?, desc_problema=?, lugar=?, tipo_problema=?, tipo_user=?";
       
         $bd = new Conexao();
@@ -205,18 +205,18 @@ class chamadosDao{
         
       
         $result0 = $v0->execute();
-       /*PARAMOS AQUI*/
+       PARAMOS AQUI
        
         if($result0){
             echo "atualizado com sucesso";
         }else{
             echo "erro ao atualizar";
         }
-    }
+    }*/
 
 
   
-     public function apagar(chamados $c){
+     /*public function apagar(chamados $c){
         $sql0 = "update into chamados  set  email=?, desc_problema=?, lugar=?, tipo_problema=?, tipo_user=?";
 
         $bd = new Conexao();
@@ -234,10 +234,56 @@ class chamadosDao{
         }else{
             echo "erro ao apagar";
         }
+    }*/
+
+
+
+    public function atualizar(chamados $c){
+        $sql1 = "update administrador set user_name=?, senha=?";
+      
+        $bd = new Conexao();
+        $conn = $bd->getConexao();
+
+        $v1 = $conn->prepare($sql1);
+        $v1->bindValue(1, $c->getUser_name());
+        $v1->bindValue(2, $c->getSenha());
+        $result1 = $v1->execute();
+       
+        if($result1){
+            echo "Senha atualizada";
+        }else{
+            echo "Erro ao atualizar senha";
+        }
     }
 
+    public function verificar(chamados $c) {
+        session_start();
 
+        $sql1 = "select * from administrador where user_name=? and senha=?";
+        $bd = new Conexao();
+        $conn = $bd->getConexao();
 
+        $v = $conn->prepare($sql1);
+        $v->bindValue(1, $c->getUser_name());
+        $v->bindValue(2, $c->getSenha());
+
+        $v->execute();
+    if ($v-> rowCount()>0){
+        $_SESSION['getUser_name'] = $c->getUser_name();
+        echo "Usuário válido";
+    }else{
+        unset ($_SESSION['$getUser_name']);
+        echo "Usuário inválido";
+        /*header("location:index.php");*/
+    }
+ }
 
 }
+
+
+
+
+
+
+
 
