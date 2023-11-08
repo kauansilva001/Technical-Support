@@ -46,7 +46,7 @@
                 <option value="">Funcionário</option>
             </select></div>
             <div class="center-phone">
-            <input class="input-button" name="botao" type="submit">
+            <input class="input-button" value="CADASTRAR" name="botao" type="submit">
             </div>
         </form>
         <div class="space-image">

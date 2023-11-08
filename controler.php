@@ -3,9 +3,9 @@
  $email= filter_input(INPUT_POST, "email");
  $desc_problema= filter_input(INPUT_POST, "desc_problema");
  $lugar= filter_input(INPUT_POST, "lugar");
- $tipo_problema = filter_input(INPUT_POST, "tipo_problema", FILTER_SANITIZE_STRING);
- $tipo_user = filter_input(INPUT_POST, "tipo_user", FILTER_SANITIZE_STRING);
- $data_hora= filter_input(INPUT_POST, "data_hora", FILTER_SANITIZE_STRING);
+ $tipo_problema = filter_input(INPUT_POST, "tipo_problema",);
+ $tipo_user = filter_input(INPUT_POST, "tipo_user",);
+ $data_hora= filter_input(INPUT_POST, "data_hora",);
  $user_name = filter_input(INPUT_POST,"user-admin");
  $senha = filter_input(INPUT_POST,"password-admin");
  $botao = filter_input(INPUT_POST, "botao");
@@ -32,21 +32,8 @@ if($botao=="CADASTRAR"){
     $chamadosDao->cadastrar($chamados);
 }else if($botao=="ATUALIZAR SENHA"){
     $chamadosDao->atualizar($chamados);
-}else if($botao=="APAGAR"){
-    $chamadosDao->apagar($chamados);
 }else if($botao == "Enviar"){
     $chamadosDao->verificar($chamados);
-}else if($botao=="BUSCAR"){
-    $chamadosDao->consultar();
-    foreach($chamadosDao->consultar() as $consult){
-        echo $consult['cod_chamados']."<BR>";
-        echo $consult['email']."<BR>";
-        echo $consult['desc_problema']."<BR>";
-        echo $consult['lugar']."<BR>";
-        echo $consult['tipo_problema']."<BR>";
-        echo $consult['tipo_user']."<BR>";
-        echo $consult['data_hora']."<BR>";
-    }
 }
 
 ?>
