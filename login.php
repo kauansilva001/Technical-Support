@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="icons/support-icon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="IMAGES-ICONS/support-icon.ico" type="image/x-icon">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="STYLE/config.css">
     <title>Sistema de Chamado</title>
@@ -16,18 +16,20 @@
             <h1 class="login-title">LOGIN</h1>
             <label>Usuário:</label>
             <div class="division-grid">
-                <div class="division-icon"><i class='bx bx-user'></i></div><input class="input-style" type="email">
+                <div class="division-icon"><i class='bx bx-user'></i></div>
+                <input class="input-style" type="text" name="user-admin">
             </div> <!--Lembrar de colocar o nome para o uso do PHP--> </tr>
 
             <label>Senha:</label>
             <div class="division-grid">
-                <div class="division-icon"><i class='bx bx-lock-alt'></i></div><input class="input-style" type="password">
+                <div class="division-icon"><i class='bx bx-lock-alt'></i></div>
+                <input class="input-style" type="password" name="password-admin">
             </div>
             <a href="controler.php">
                 <p class="text-password">Esqueceu a senha?</p>
             </a>
             <div class="division-button">
-                <input style="text-transform: uppercase;" class="input-button" type="submit">
+                <input style="text-transform: uppercase;" class="input-button" type="submit" name="botao" value="Enviar">
             </div>
             <div class="social-message">
                 <div class="line"></div>
