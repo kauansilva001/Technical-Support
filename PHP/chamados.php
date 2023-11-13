@@ -65,6 +65,14 @@ class chamados{
         $this->tipo_user = $tipo_user;
     }
 
+    public function getStatus(){
+        return $this->status;
+    }
+
+    public function setStatus(){
+        $thus->status = $status;
+    }
+
 
     public function getData_hora(){
         return $this->data_hora;

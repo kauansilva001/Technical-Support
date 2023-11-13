@@ -36,6 +36,15 @@
   $chamadosDAO = new chamadosDAO();
 
   $chamadosDAO->consultarChamados($chamados);
+  foreach($chamadosDAO->consultarChamados() as $consult){
+      echo $consult['cod_chamados']."<br>";
+      echo $consult['email']."<br>";
+      echo $consult['desc_problema']."<br>";
+      echo $consult['lugar']."<br>";
+      echo $consult['tipo_problema']."<br>";
+      echo $consult['tipo_user']."<br>";
+      echo $consult['data_hora'];
+  }
 
   ?>
 

@@ -133,7 +133,7 @@ class chamadosDao
     //create
     public function cadastrar(chamados $c)
     {
-        $sql0 = "insert into chamados (email, desc_problema, lugar, tipo_problema, tipo_user) values (?,?,?,?,?)";
+        $sql0 = "insert into chamados (email, desc_problema, lugar, tipo_problema, tipo_user, status) values (?,?,?,?,?,?)";
 
         $bd = new Conexao();
         $conn = $bd->getConexao();
@@ -144,6 +144,7 @@ class chamadosDao
         $v0->bindValue(3, $c->getLugar());
         $v0->bindValue(4, $c->getTipo_problema());
         $v0->bindValue(5, $c->getTipo_user());
+        $v0->bindValue(6, true);
 
 
 
@@ -157,7 +158,7 @@ class chamadosDao
             <div>
             <p>CADASTRADO COM SUCESSO!</p>
             <div class='botao'>
-           <a href='index.php'><input class='input-button' value='ENVIAR OUTRO CHAMADO' name='botao' type='submit'</a></div>
+           <a href='../user.php'><input class='input-button' value='ENVIAR OUTRO CHAMADO' name='botao' type='submit'</a></div>
             </div>
             <div class='space-image'>
             <img src='IMAGES-ICONS/IMAGE-INDEX.svg' alt='Ilustração na qual a personagem usa um computador' width='95%'>
@@ -286,8 +287,25 @@ class chamadosDao
         }
     }
 
-    public function consultarChamados(chamados $c)
-    {
+    public function consultarChamados(){
+        $sql0 = "select * from chamados where status=1";
+        $bd = new Conexao();
+        $conn = $bd->getConexao();
+
+        $vl = $conn->prepare($sql0);
+        $result = $vl->execute();
+
+        // o método rowCount mostra se as linhas contadas são maiores que 0
+        if ($vl->rowCount() > 0) {
+            // salva na variável result uma busca e obtenção de daods presentes no banco de dados 
+            $result = $vl->fetchAll(\PDO::FETCH_ASSOC);
+            return $result;
+        } else {
+            echo "Não há chamados";
+        }
+    }
+
+    public function consultarChamadosAntigos(){
         $sql0 = "select * from chamados";
         $bd = new Conexao();
         $conn = $bd->getConexao();
