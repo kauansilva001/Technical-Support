@@ -43,11 +43,11 @@
       echo $consult['lugar']."<br>";
       echo $consult['tipo_problema']."<br>";
       echo $consult['tipo_user']."<br>";
-      echo $consult['data_hora'];
+      echo $consult['data_hora']."<hr>";
   }
 
-  ?>
 
+?>
 </body>
 
 </html>

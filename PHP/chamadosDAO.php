@@ -305,8 +305,8 @@ class chamadosDao
         }
     }
 
-    public function consultarChamadosAntigos(){
-        $sql0 = "select * from chamados";
+    public function consultarChamadosResolvidos(){
+        $sql0 = "select * from chamados where status=0";
         $bd = new Conexao();
         $conn = $bd->getConexao();
 
