@@ -29,32 +29,32 @@
                 <label>Local do problema:</label>
                 <div class="division-grid">
                     <div class="division-icon"><i class='bx bx-map'></i></div><select name="lugar"> <!-- Lembrar de colocar o nome para o uso do PHP -->
-                        <option value="patio">Pátio</option>
-                        <option value="diretoria">Diretoria</option>
-                        <option value="secretaria">Secretaria</option>
-                        <option value="lab_informatica_1">Laboratório de informática 1</option>
-                        <option value="lab_informatica_2">Laboratório de informática 2</option>
-                        <option value="lab_informatica_3">Laboratório de informática 3</option>
-                        <option value="outro">Outro (Especifique o local na parte de descrição)</option>
+                        <option value="Pátio">Pátio</option>
+                        <option value="Diretoria">Diretoria</option>
+                        <option value="Secretaria">Secretaria</option>
+                        <option value="Laboratório de informática 1">Laboratório de informática 1</option>
+                        <option value="Laboratório de informática 2">Laboratório de informática 2</option>
+                        <option value="Laboratório de informática 3">Laboratório de informática 3</option>
+                        <option value="Está na descrição">Outro (Especifique o local na parte de descrição)</option>
                     </select>
                 </div>
 
                 <label>Tipo de problema:</label>
                 <div class="division-grid">
                     <div class="division-icon"><i class='bx bx-dizzy'></i></div><select name="tipo_problema"> <!-- Lembrar de colocar o nome para o uso do PHP -->
-                        <option value="hardware">Hardware</option>
-                        <option value="software">Software</option>
-                        <option value="drivers">Drivers</option>
-                        <option value="outros_eletronicos">Outros Eleônicos</option>
+                        <option value="Hardware">Hardware</option>
+                        <option value="Software">Software</option>
+                        <option value="Drivers">Drivers</option>
+                        <option value="Outros Eletrônicos">Outros Eletrônicos</option>
                     </select>
                 </div>
 
                 <label>Eu sou:</label>
                 <div class="division-grid">
                     <div class="division-icon"><i class='bx bx-id-card'></i></div><select name="tipo_user">
-                        <option value="aluno">Aluno</option>
-                        <option value="professor">Professor</option>
-                        <option value="funcionario">Funcionário</option>
+                        <option value="Aluno">Aluno</option>
+                        <option value="Professor">Professor</option>
+                        <option value="Funcionário">Funcionário</option>
                     </select>
                 </div>
                 <div class="center-phone">

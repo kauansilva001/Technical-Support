@@ -20,6 +20,7 @@
   $tipo_user = filter_input(INPUT_POST, "tipo_user", );
   $data_hora = filter_input(INPUT_POST, "data_hora", );
 
+
   include("PHP/chamadosDAO.php");
   include("PHP/chamados.php");
 
@@ -46,6 +47,22 @@
       echo $consult['data_hora']."<hr>";
   }
 
+  $resultadoConsulta = $chamadosDAO->consultarChamadosResolvidos();
+
+  if ($resultadoConsulta !== false) {
+      foreach ($resultadoConsulta as $consult) {
+          echo $consult['cod_chamados'] . "<br>";
+          echo $consult['email'] . "<br>";
+          echo $consult['desc_problema'] . "<br>";
+          echo $consult['lugar'] . "<br>";
+          echo $consult['tipo_problema'] . "<br>";
+          echo $consult['tipo_user'] . "<br>";
+          echo $consult['data_hora'] . "<hr>";
+      }
+  } else {
+      echo "Não há chamados resolvidos";
+  }
+  
 
 ?>
 </body>

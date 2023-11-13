@@ -238,19 +238,32 @@ class chamadosDao
         $sql0 = "select * from chamados where status=0";
         $bd = new Conexao();
         $conn = $bd->getConexao();
-
+    
         $vl = $conn->prepare($sql0);
+        if (!$vl) {
+            // Tratar erro na preparação da consulta
+            print_r($conn->errorInfo());
+            return false;
+        }
+    
         $result = $vl->execute();
-
-        // o método rowCount mostra se as linhas contadas são maiores que 0
+        if (!$result) {
+            // Tratar erro na execução da consulta
+            print_r($vl->errorInfo());
+            return false;
+        }
+    
         if ($vl->rowCount() > 0) {
-            // salva na variável result uma busca e obtenção de daods presentes no banco de dados 
             $result = $vl->fetchAll(\PDO::FETCH_ASSOC);
+            $vl->closeCursor();
             return $result;
         } else {
-            echo "Não há chamados";
+            // Não há chamados, retornar false
+            $vl->closeCursor();
+            return false;
         }
     }
+    
 }
 
 
