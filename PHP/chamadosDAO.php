@@ -170,7 +170,7 @@ class chamadosDao
         }
     }
 
-   
+
 
 
 
@@ -229,30 +229,29 @@ class chamadosDao
             // salva na variável result uma busca e obtenção de daods presentes no banco de dados 
             $result = $vl->fetchAll(\PDO::FETCH_ASSOC);
             return $result;
-        } else {
-            echo "Não há chamados";
         }
     }
 
-    public function consultarChamadosResolvidos(){
+    public function consultarChamadosResolvidos()
+    {
         $sql0 = "select * from chamados where status=0";
         $bd = new Conexao();
         $conn = $bd->getConexao();
-    
+
         $vl = $conn->prepare($sql0);
         if (!$vl) {
             // Tratar erro na preparação da consulta
             print_r($conn->errorInfo());
             return false;
         }
-    
+
         $result = $vl->execute();
         if (!$result) {
             // Tratar erro na execução da consulta
             print_r($vl->errorInfo());
             return false;
         }
-    
+
         if ($vl->rowCount() > 0) {
             $result = $vl->fetchAll(\PDO::FETCH_ASSOC);
             $vl->closeCursor();
@@ -263,13 +262,4 @@ class chamadosDao
             return false;
         }
     }
-    
 }
-
-
-
-
-
-
-
-

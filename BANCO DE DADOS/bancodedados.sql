@@ -11,6 +11,7 @@ desc_problema varchar (500),
 lugar varchar (50),
 tipo_problema varchar (40),
 tipo_user varchar (40),
+status boolean,
 data_hora datetime default current_timestamp
 );
 
