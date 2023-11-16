@@ -74,27 +74,36 @@
 
   ?>
 
+  <?php
+  while ($conferirChamados);
+  ?>
+
+<div class="container-fluid">
   <table class="table table-danger table-stripped">
     <thead>
       <tr>
         <th scope="col">Código do chamado</th>
-        <th scope="col">Email Institucional</th>
-        <th scope="col">Descrição do problema</th>
-        <th scope="col">Local do problema</th>
-        <th scope="col">Tipo de problema</th>
-        <th scope="col">Tipo de usuário</th>
+        <th scope="col">Email</th>
+        <th scope="col">Descrição</th>
+        <th scope="col">Local</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Usuário</th>
         <th scope="col">Data e Hora</th>
       </tr>
     </thead>
-    <tr>
-      <td></td>
-    </tr>
+    <tbody>
+      <tr>
+        <tr>
+          <td><?php echo $conferirChamados["cod_chamados"]; ?></td>
+        </tr>
+      </tr>
+    </tbody>
   </table>
 
   <table class="table table-success">
 
   </table>
-
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
