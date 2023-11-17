@@ -5,8 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="IMAGES-ICONS/support-icon.ico" type="image/x-icon">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="STYLE/aplication.css">
   <title>Sistema de chamados</title>
 </head>
 
@@ -41,29 +40,29 @@
   $conferirChamados = $chamadosDAO->consultarChamados();
   $resultadoConsulta = $chamadosDAO->consultarChamadosResolvidos();
 
-  if ($conferirChamados == true) {
+  /*if ($conferirChamados == true) {
 
     foreach ($conferirChamados as $consult) {
-      echo $consult['cod_chamados'] . "<br>";
-      echo $consult['email'] . "<br>";
-      echo $consult['desc_problema'] . "<br>";
-      echo $consult['lugar'] . "<br>";
-      echo $consult['tipo_problema'] . "<br>";
-      echo $consult['tipo_user'] . "<br>";
+      echo $consult['cod_chamados'] . "</td><td>";
+      echo $consult['email'] . "</td><td>";
+      echo $consult['desc_problema'] . "</td><td>";
+      echo $consult['lugar'] . "</td><td>";
+      echo $consult['tipo_problema'] . "</td><td>";
+      echo $consult['tipo_user'] . "</td><td>";
       echo $consult['data_hora'] . "<hr>";
     }
   } else {
-    echo "Não há chamados" . "<br>";
-  }
+    echo "Não há chamados" . "</td><td>";
+  }*/
 
   if ($resultadoConsulta !== false) {
     foreach ($resultadoConsulta as $consult) {
-      echo $consult['cod_chamados'] . "<br>";
-      echo $consult['email'] . "<br>";
-      echo $consult['desc_problema'] . "<br>";
-      echo $consult['lugar'] . "<br>";
-      echo $consult['tipo_problema'] . "<br>";
-      echo $consult['tipo_user'] . "<br>";
+      echo $consult['cod_chamados'] . "</td><td>";
+      echo $consult['email'] . "</td><td>";
+      echo $consult['desc_problema'] . "</td><td>";
+      echo $consult['lugar'] . "</td><td>";
+      echo $consult['tipo_problema'] . "</td><td>";
+      echo $consult['tipo_user'] . "</td><td>";
       echo $consult['data_hora'] . "<hr>";
     }
   } else {
@@ -74,45 +73,71 @@
 
   ?>
 
-  <?php
-  while ($conferirChamados);
-  ?>
-
-<div class="container-fluid">
-  <table class="table table-danger table-stripped">
+<div class="container">
+  <table>
     <thead>
       <tr>
-        <th scope="col">Código do chamado</th>
-        <th scope="col">Email</th>
-        <th scope="col">Descrição</th>
-        <th scope="col">Local</th>
-        <th scope="col">Tipo</th>
-        <th scope="col">Usuário</th>
-        <th scope="col">Data e Hora</th>
+        <th class="header-cells">Código</th>
+        <th class="header-cells">Email</th>
+        <th class="header-cells">Descrição</th>
+        <th class="header-cells">Local</th>
+        <th class="header-cells">Tipo</th>
+        <th class="header-cells">Usuário</th>
+        <th class="header-cells">Data e Hora</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <tr>
-          <td><?php echo $conferirChamados["cod_chamados"]; ?></td>
-        </tr>
+      <th>
+        <?php
+        
+        if ($conferirChamados == true) {
+
+          foreach ($conferirChamados as $consult) {
+            echo $consult['cod_chamados'] . "</td><td>";
+            echo $consult['email'] . "</td><td>";
+            echo $consult['desc_problema'] . "</td><td>";
+            echo $consult['lugar'] . "</td><td>";
+            echo $consult['tipo_problema'] . "</td><td>";
+            echo $consult['tipo_user'] . "</td><td>";
+            echo $consult['data_hora']."<tr><th>";
+          }
+        } else {
+          echo "Não há chamados" . "<br>";
+        }
+        
+        ?>
+    </tbody>
+  </table>
+</div>
+
+<div class="container">
+  <table>
+    <thead>
+      <tr>
+        <th class="header-cell">Código</th>
+        <th class="header-cell">Email</th>
+        <th class="header-cell">Descrição</th>
+        <th class="header-cell">Local</th>
+        <th class="header-cell">Tipo</th>
+        <th class="header-cell">Usuário</th>
+        <th class="header-cell">Data e Hora</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr class="main-cells">
+        <th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </th>
       </tr>
     </tbody>
   </table>
+</div>
 
-  <table class="table table-success">
-
-  </table>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
 </body>
-
-
-
-
-
-
 </html>
