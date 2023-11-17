@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;900&display=swap');
+
+* {
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    text-decoration: none;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+table {
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+.header-cells {
+    background-color: rgb(208, 56, 56);
+}
+
+.header-cells, .header-cell {
+    color: white;
+    text-transform: uppercase;
+    padding: 10px 20px;
+}
+
+td {
+    padding: 10px;
+}
+
+/* ----------------- ESTILIZAÇÃO DE TABELAS -------------------- */
+
+.header-cell {
+    background-color: rgb(43, 156, 43);
+}
+
+
