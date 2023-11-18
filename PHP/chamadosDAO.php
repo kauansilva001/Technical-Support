@@ -193,6 +193,19 @@ class chamadosDao
         }
     }
 
+    public function atualizarChamado(chamados $c){
+        $sql0 = "update chamados set status = true where cod_chamados = 1";
+
+        $bd = new Conexao();
+        $conn = $bd->getConexao();
+
+        $v1 = $conn->prepare($sql0);
+        $v1->bindValue(1, $c->getStatus());
+        $v1->bindValue(2, $c->getCod_chamados());
+
+
+    }
+
     public function verificar(chamados $c)
     {
         session_start();

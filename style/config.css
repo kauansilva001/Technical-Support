@@ -57,7 +57,7 @@ label, option, select {
 }
 
 .division-grid {
-    margin-top: 3px;
+    margin-top: 5px;
     margin-bottom: 7px;
     width: 570px;
     height: 44px;
@@ -77,6 +77,14 @@ label, option, select {
     border: none;
 }
 
+input {
+    font-size: 12px;
+    font-family: 'Inter', sans-serif;
+    border: none;
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
 i {
     font-size: 30px;
     position: relative;
@@ -84,7 +92,7 @@ i {
     left: 5px;
 }
 
-.input-style:focus {
+input:focus {
     font-size: 12px;
     font-family: 'Inter', sans-serif;
     border: none;
@@ -116,6 +124,11 @@ select:focus {
     border: none;
     cursor: pointer;
 }
+
+input:focus {
+    font-size: 12px;
+}
+
 
 .division-button {
     margin-top: 10px;

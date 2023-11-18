@@ -13,8 +13,11 @@
     flex-wrap: wrap;
 }
 
+/* ----------------- ESTILIZAÇÃO DE TABELAS -------------------- */
+
 table, th, td {
     border: 1px solid black;
+  
 }
 
 table {
@@ -32,14 +35,37 @@ table {
     padding: 10px 20px;
 }
 
-td {
+td{
     padding: 10px;
 }
 
-/* ----------------- ESTILIZAÇÃO DE TABELAS -------------------- */
 
 .header-cell {
     background-color: rgb(43, 156, 43);
 }
+
+p {
+    font-weight: 300;
+}
+
+
+/* ----------- CABEÇALHO ---------- */
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+input {
+    width: 200px;
+    height: 24px;
+}
+
+input-n {
+    padding: 2px 5px;
+}
+
+
 
 

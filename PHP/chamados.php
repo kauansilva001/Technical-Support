@@ -9,7 +9,8 @@ class chamados{
     $tipo_user ,
     $data_hora,
     $user_name,
-    $senha;
+    $senha,
+    $status;
 
 
     public function getCod_chamados(){
@@ -69,8 +70,8 @@ class chamados{
         return $this->status;
     }
 
-    public function setStatus(){
-        $thus->status = $status;
+    public function setStatus($status){
+        $this->status = $status;
     }
 
 

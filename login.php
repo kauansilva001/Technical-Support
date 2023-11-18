@@ -17,13 +17,13 @@
             <label>Usuário:</label>
             <div class="division-grid">
                 <div class="division-icon"><i class='bx bx-user'></i></div>
-                <input class="input-style" type="text" name="user-admin">
+                <input style="font-size: 12px;" class="input-style" type="text" name="user-admin">
             </div> <!--Lembrar de colocar o nome para o uso do PHP--> </tr>
 
             <label>Senha:</label>
             <div class="division-grid">
                 <div class="division-icon"><i class='bx bx-lock-alt'></i></div>
-                <input class="input-style" type="password" name="password-admin">
+                <input style="font-size: 12px;" class="input-style" type="password" name="password-admin">
             </div>
             <a href="controler.php">
                 <p class="text-password">Esqueceu a senha?</p>
@@ -37,8 +37,8 @@
                 <div class="line"></div>
             </div>
             <div class="icons-space">
-                <i class='bx bx-envelope' style="font-size:50px; cursor:pointer;"></i>
-                <i class='bx bxl-github' style="font-size:50px; cursor:pointer;"></i>
+                <a href="mailto:"><i class='bx bx-envelope' style="font-size:50px; cursor:pointer;"></i></a>
+                <a href="https://github.com/kauansilva001/Technical-Support"><i class='bx bxl-github' style="font-size:50px; cursor:pointer;"></i></a>
             </div>
         </form>
     </main>
