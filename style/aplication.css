@@ -20,9 +20,14 @@ table, th, td {
   
 }
 
+th {
+    padding: 10px;
+}
+
 table {
     margin-top: 20px;
     border-collapse: collapse;
+    width: 85%;
 }
 
 .header-cells {

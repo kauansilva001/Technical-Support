@@ -126,7 +126,6 @@ justify-content:center;
 
 <?php
 include "conexao.php";
-
 class chamadosDao
 {
     //CRUD - create, read, update, delete
@@ -184,26 +183,30 @@ class chamadosDao
         $v1 = $conn->prepare($sql1);
         $v1->bindValue(1, $c->getUser_name());
         $v1->bindValue(2, $c->getSenha());
-        $result1 = $v1->execute();
+        $result0 = $v1->execute();
 
-        if ($result1) {
+        if ($result0) {
             echo "Senha atualizada";
         } else {
             echo "Erro ao atualizar senha";
         }
     }
 
-    public function atualizarChamado(chamados $c){
-        $sql0 = "update chamados set status = true where cod_chamados = 1";
+    public function atualizarChamado(chamados $c){ 
+        $sql0 = "update chamados set status = false where cod_chamados =?";
 
         $bd = new Conexao();
         $conn = $bd->getConexao();
 
         $v1 = $conn->prepare($sql0);
-        $v1->bindValue(1, $c->getStatus());
-        $v1->bindValue(2, $c->getCod_chamados());
+        $v1->bindValue(1, $c->getCod_chamados());
+        $result0 = $v1->execute();
 
-
+        if($result0) {
+            header("location:../listarchamados.php");
+        }else {
+            echo "Não foi possível atualizar o chamado";
+        }
     }
 
     public function verificar(chamados $c)
@@ -225,7 +228,6 @@ class chamadosDao
         } else {
             unset($_SESSION['$getUser_name']);
             echo "Usuário inválido <br> <a href='../login.php'>Volte aqui!</a>";
-            /*header("location:index.php");*/
         }
     }
 

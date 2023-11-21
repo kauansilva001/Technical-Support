@@ -25,7 +25,7 @@
                 <div class="division-icon"><i class='bx bx-lock-alt'></i></div>
                 <input style="font-size: 12px;" class="input-style" type="password" name="password-admin">
             </div>
-            <a href="controler.php">
+            <a href="verificacao.php">
                 <p class="text-password">Esqueceu a senha?</p>
             </a>
             <div class="division-button">

@@ -1,16 +1,14 @@
 <?php
-    class Conexao{
+    class Conexao {
         private static $instancia;
 
-        public static function getConexao(){
-            if(!isset(self::$instancia)){
-                self::$instancia = new PDO('mysql:host=localhost; dbname=sistema_de_chamados; chatset=utf8',
-                'root', '');
+        public static function getConexao() {
+            if (!isset(self::$instancia)) {
+                self::$instancia = new PDO('mysql:host=localhost; dbname=sistema_de_chamados; charset=utf8', 'root', '');
                 return self::$instancia;
-            }else{
+            } else {
                 return self::$instancia;
             }
         }
     }
-
 ?>

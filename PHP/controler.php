@@ -8,6 +8,7 @@
  $data_hora= filter_input(INPUT_POST, "data_hora",);
  $user_name = filter_input(INPUT_POST,"user-admin");
  $senha = filter_input(INPUT_POST,"password-admin");
+ $status = true;
  $botao = filter_input(INPUT_POST, "botao");
 
 include "chamadosDAO.php";
@@ -20,6 +21,7 @@ $chamados->setDesc_problema($desc_problema);
 $chamados->setLugar($lugar);
 $chamados->setTipo_problema($tipo_problema);
 $chamados->setTipo_user($tipo_user);
+$chamados->setStatus($status);
 $chamados->setData_hora($data_hora);
 $chamados->setUser_name($user_name);
 $chamados->setSenha($senha);
@@ -34,7 +36,9 @@ if($botao=="CADASTRAR"){
     $chamadosDao->atualizar($chamados);
 }else if($botao == "Enviar"){
     $chamadosDao->verificar($chamados);
-}
+}else  if ($botao == "ATUALIZAR CHAMADO") {
+    $chamadosDao->atualizarChamado($chamados);
+  }
 ?>
 
 
