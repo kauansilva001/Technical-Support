@@ -1,10 +1,10 @@
-<?php 
+<?php
 session_start();
- if(!isset($_SESSION['$getUser_name']) == true){
-    header('location:login.php');
-    exit();
- }else {
-   $_SESSION['$getUser_name'];
+
+if (isset($_SESSION['$getUser_name'])) {
+  header('Location: login.php');
+  exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -49,7 +49,7 @@ session_start();
 
   $conferirChamados = $chamadosDAO->consultarChamados();
   $resultadoConsulta = $chamadosDAO->consultarChamadosResolvidos();
-  
+
   ?>
 
   <header>
@@ -59,87 +59,87 @@ session_start();
       <input class="input-s" type="submit" value="ATUALIZAR CHAMADO" name="botao">
     </form>
   </header>
-    <main>
-      <div class="container">
-        <table>
-          <thead>
-            <tr>
-              <th class="header-cells">Código</th>
-              <th class="header-cells">Email</th>
-              <th class="header-cells">Descrição</th>
-              <th class="header-cells">Local</th>
-              <th class="header-cells">Tipo</th>
-              <th class="header-cells">Usuário</th>
-              <th class="header-cells">Data e Hora</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th>
-                <?php
+  <main>
+    <div class="container">
+      <table>
+        <thead>
+          <tr>
+            <th class="header-cells">Código</th>
+            <th class="header-cells">Email</th>
+            <th class="header-cells">Descrição</th>
+            <th class="header-cells">Local</th>
+            <th class="header-cells">Tipo</th>
+            <th class="header-cells">Usuário</th>
+            <th class="header-cells">Data e Hora</th>
+          </tr>
+        </thead>
+        <tbody>
+          <th>
+            <?php
+            if ($conferirChamados == true) {
+              foreach ($conferirChamados as $consult) {
+                echo $consult['cod_chamados'] . "</th><td><a href='mailto:" . $consult['email'] . "?subject=SISTEMA DE CHAMADO'>";
+                echo $consult['email'] . "</a></td><td>";
+                echo $consult['desc_problema'] . "</td><td>";
+                echo $consult['lugar'] . "</td><td>";
+                echo $consult['tipo_problema'] . "</td><td>";
+                echo $consult['tipo_user'] . "</td><td>";
+                echo $consult['data_hora'] . "</td></tr>";
+              }
+            } else {
+              echo '<p style="padding=10px;">Não há chamados</p>';
+            }
+            ?>
 
+          </th>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="container">
+      <table>
+        <thead>
+          <tr>
+            <th class="header-cell">Código</th>
+            <th class="header-cell">Email</th>
+            <th class="header-cell">Descrição</th>
+            <th class="header-cell">Local</th>
+            <th class="header-cell">Tipo</th>
+            <th class="header-cell">Usuário</th>
+            <th class="header-cell">Data e Hora</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+              <?php
+              if ($resultadoConsulta !== false) {
+                foreach ($resultadoConsulta as $consult) {
+                  echo "<th>";
+                  echo $consult['cod_chamados'] . "</th><td>";
+                  echo $consult['email'] . "</td><td>";
+                  echo $consult['desc_problema'] . "</td><td>";
+                  echo $consult['lugar'] . "</td><td>";
+                  echo $consult['tipo_problema'] . "</td><td>";
+                  echo $consult['tipo_user'] . "</td><td>";
+                  echo $consult['data_hora'] . "</td><tr>";
+                }
+              } else {
                 if ($conferirChamados == true) {
-
-                  foreach ($conferirChamados as $consult) {
-                    echo $consult['cod_chamados'] . "</td><td>";
-                    echo $consult['email'] . "</td><td>";
-                    echo $consult['desc_problema'] . "</td><td>";
-                    echo $consult['lugar'] . "</td><td>";
-                    echo $consult['tipo_problema'] . "</td><td>";
-                    echo $consult['tipo_user'] . "</td><td>";
-                    echo $consult['data_hora'] . "<tr></th><th>";
-                  }
-                } else {
-                  echo '<p style="padding=10px;">Não há chamados</p>';
+                  echo '<p style="padding=10px;">Não há chamados resolvidos :(</p>';
                 }
+              }
 
-                ?>
-          </tbody>
-        </table>
+              ?>
+        </tbody>
+      </table>
+    </div>
+    <a href="">
+      <div class="log-out">
+
       </div>
+    </a>
+  </main>
 
-      <div class="container">
-        <table>
-          <thead>
-            <tr>
-              <th class="header-cell">Código</th>
-              <th class="header-cell">Email</th>
-              <th class="header-cell">Descrição</th>
-              <th class="header-cell">Local</th>
-              <th class="header-cell">Tipo</th>
-              <th class="header-cell">Usuário</th>
-              <th class="header-cell">Data e Hora</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th style="padding: 10px;">
-                <?php
-                if ($resultadoConsulta !== false) {
-                  foreach ($resultadoConsulta as $consult) {
-                    echo $consult['cod_chamados'] . "</td><td>";
-                    echo $consult['email'] . "</td><td>";
-                    echo $consult['desc_problema'] . "</td><td>";
-                    echo $consult['lugar'] . "</td><td>";
-                    echo $consult['tipo_problema'] . "</td><td>";
-                    echo $consult['tipo_user'] . "</td><td>";
-                    echo $consult['data_hora']. "<tr></th><th>";
-                  }
-                } else {
-                  if ($conferirChamados == true) {
-                    echo '<p>Não há chamados resolvidos :(</p>';
-                  }
-                }
-
-                ?>
-          </tbody>
-        </table>
-      </div>
-    </main>
 </body>
 
 </html>
-
-<?php
- }
-?>
