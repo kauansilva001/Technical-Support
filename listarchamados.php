@@ -1,10 +1,13 @@
 <?php
 session_start();
 
+// Verifica se o usuário está autenticado
 if (!isset($_SESSION['getUser_name'])) {
-    header("location: login.php");
-    exit(); 
+  // Se não estiver autenticado, redireciona para a página de login na pasta anterior
+  header("location: ../login.php");
+  exit(); // Interrompe a execução adicional do script
 }
+
     include "PHP/chamadosDAO.php";    
     include "PHP/chamados.php";
   
