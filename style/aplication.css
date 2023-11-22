@@ -42,7 +42,7 @@ table {
 
 td{
     padding: 15px;
-    font-size: 10px;
+    font-size: 12px;
 }
 
 
@@ -72,6 +72,30 @@ input-n {
     padding: 2px 5px;
 }
 
+.log{
+    background-color: aqua;
+    width: 13px;
+    height: 13px;
+}
 
+/* -------- LOG ---------- */ 
 
+body {
+    height: 150dvh;
+}
 
+.log-out {
+    display: grid;
+    place-items: center;
+    width: 75px;
+    height: 75px;
+    position: fixed;
+    bottom: 50px;
+    right: 25px;
+    background-color: rgb(10, 10, 10);
+    border-radius: 50%;
+}
+
+i {
+    font-size: 30px;
+}

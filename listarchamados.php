@@ -1,12 +1,42 @@
 <?php
 session_start();
 
-if (isset($_SESSION['$getUser_name'])) {
-  header('Location: login.php');
-  exit();
+if (!isset($_SESSION['getUser_name'])) {
+    header("location: login.php");
+    exit(); 
 }
-?>
+    include "PHP/chamadosDAO.php";    
+    include "PHP/chamados.php";
+  
+    $cod_chamados = filter_input(INPUT_POST, "cod_chamados");
+    $email = filter_input(INPUT_POST, "email");
+    $desc_problema = filter_input(INPUT_POST, "desc_problema");
+    $lugar = filter_input(INPUT_POST, "lugar");
+    $tipo_problema = filter_input(INPUT_POST, "tipo_problema",);
+    $tipo_user = filter_input(INPUT_POST, "tipo_user",);
+    $data_hora = filter_input(INPUT_POST, "data_hora",);
+    $button = filter_input(INPUT_POST, "button");
+    $status = true;
+  
+  
+  
+  
+    $chamados = new chamados();
+  
+    $chamados->setCod_chamados($cod_chamados);
+    $chamados->setEmail($email);
+    $chamados->setDesc_problema($desc_problema);
+    $chamados->setLugar($lugar);
+    $chamados->setTipo_problema($tipo_problema);
+    $chamados->setTipo_user($tipo_user);
+    $chamados->setData_hora($data_hora);
+  
+    $chamadosDAO = new chamadosDAO();
+  
+    $conferirChamados = $chamadosDAO->consultarChamados();
+    $resultadoConsulta = $chamadosDAO->consultarChamadosResolvidos();
 
+?>
 <!DOCTYPE html>
 <html lang="PT-BR">
 
@@ -15,42 +45,11 @@ if (isset($_SESSION['$getUser_name'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="IMAGES-ICONS/support-icon.ico" type="image/x-icon">
   <link rel="stylesheet" href="STYLE/aplication.css">
+  <link  href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'  rel='stylesheet'>
   <title>Sistema de chamados</title>
 </head>
 
 <body>
-  <?php
-
-  $cod_chamados = filter_input(INPUT_POST, "cod_chamados");
-  $email = filter_input(INPUT_POST, "email");
-  $desc_problema = filter_input(INPUT_POST, "desc_problema");
-  $lugar = filter_input(INPUT_POST, "lugar");
-  $tipo_problema = filter_input(INPUT_POST, "tipo_problema",);
-  $tipo_user = filter_input(INPUT_POST, "tipo_user",);
-  $data_hora = filter_input(INPUT_POST, "data_hora",);
-  $button = filter_input(INPUT_POST, "button");
-  $status = true;
-
-
-  include("PHP/chamadosDAO.php");
-  include("PHP/chamados.php");
-
-  $chamados = new chamados();
-
-  $chamados->setCod_chamados($cod_chamados);
-  $chamados->setEmail($email);
-  $chamados->setDesc_problema($desc_problema);
-  $chamados->setLugar($lugar);
-  $chamados->setTipo_problema($tipo_problema);
-  $chamados->setTipo_user($tipo_user);
-  $chamados->setData_hora($data_hora);
-
-  $chamadosDAO = new chamadosDAO();
-
-  $conferirChamados = $chamadosDAO->consultarChamados();
-  $resultadoConsulta = $chamadosDAO->consultarChamadosResolvidos();
-
-  ?>
 
   <header>
     <h1>VERIFICAÇÃO DE CHAMADOS</h1>
@@ -74,10 +73,10 @@ if (isset($_SESSION['$getUser_name'])) {
           </tr>
         </thead>
         <tbody>
-          <th>
             <?php
             if ($conferirChamados == true) {
               foreach ($conferirChamados as $consult) {
+                echo "<th>";
                 echo $consult['cod_chamados'] . "</th><td><a href='mailto:" . $consult['email'] . "?subject=SISTEMA DE CHAMADO'>";
                 echo $consult['email'] . "</a></td><td>";
                 echo $consult['desc_problema'] . "</td><td>";
@@ -87,7 +86,7 @@ if (isset($_SESSION['$getUser_name'])) {
                 echo $consult['data_hora'] . "</td></tr>";
               }
             } else {
-              echo '<p style="padding=10px;">Não há chamados</p>';
+              echo '<td style="padding=10px;">Não há chamados</td>';
             }
             ?>
 
@@ -110,7 +109,6 @@ if (isset($_SESSION['$getUser_name'])) {
           </tr>
         </thead>
         <tbody>
-          <tr>
               <?php
               if ($resultadoConsulta !== false) {
                 foreach ($resultadoConsulta as $consult) {
@@ -125,7 +123,7 @@ if (isset($_SESSION['$getUser_name'])) {
                 }
               } else {
                 if ($conferirChamados == true) {
-                  echo '<p style="padding=10px;">Não há chamados resolvidos :(</p>';
+                  echo '<td style="padding=10px;">Não há chamados resolvidos :(</td>';
                 }
               }
 
@@ -133,13 +131,12 @@ if (isset($_SESSION['$getUser_name'])) {
         </tbody>
       </table>
     </div>
-    <a href="">
-      <div class="log-out">
-
-      </div>
+    <a href="PHP/deslog.php" class="link-out">
+        <div class="log-out">
+            <i  class='bx bxs-user-minus'  style='color:#ffffff' ></i>
+        </div>
     </a>
   </main>
-
 </body>
 
 </html>
