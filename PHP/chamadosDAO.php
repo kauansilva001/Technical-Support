@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../IMAGES-ICONS/support-icon.ico" type="image/x-icon">
+
     <title>Sistema de chamados</title>
 </head>
 
@@ -41,19 +42,7 @@ class chamadosDao
 
 
         if ($result0) {
-            echo "
-            <main>
-            <div class='container'>
-            <div>
-            <p>CADASTRADO COM SUCESSO!</p>
-            <div class='botao'>
-           <a href='../user.php'><input class='input-button' value='ENVIAR OUTRO CHAMADO' name='botao' type='submit'</a></div>
-            </div>
-            <div class='space-image'>
-            <img src='../IMAGES-ICONS/IMAGE-INDEX.svg' alt='Ilustração na qual a personagem usa um computador' width='95%'>
-            </div>
-            <main>
-            </div>";
+            header('location:../cadastro.php');
         } else {
             echo "erro ao cadastrar";
         }
